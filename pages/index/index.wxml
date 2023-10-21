@@ -1,0 +1,65 @@
+<!-- <scroll-view class="scrollarea" scroll-y type="list"> -->
+
+<!-- NavBar -->
+<t-navbar left-arrow title="兑换码" />
+
+<!-- message -->
+<t-message id="t-message" />
+
+<!-- container -->
+<view class="container">
+  <!-- 首图 -->
+  <t-image
+    src="/public/images/rximg.jpeg"
+    mode="aspectFill"
+    width="75vw"
+    height="75vw"
+  />
+
+  <!-- 标题 -->
+  <view class="title-wrapper">
+    <text>领取瑞幸兑换码</text>
+  </view>
+
+  <!-- 昵称 -->
+  <view>
+    <t-input
+      label="昵称"
+      type="nickname"
+      placeholder="请输入微信昵称"
+      bind:blur="nicknameChange"
+    >
+      <t-button
+        slot="suffix"
+        theme="primary"
+        size="small"
+        disabled="{{ submitBtnDisabled }}"
+        class="margin"
+        bind:tap="onSubmit"
+        >领取</t-button
+      >
+    </t-input>
+  </view>
+
+  <!-- 兑换码展示区 -->
+  <view>
+    <t-cell-group theme="card">
+      <t-cell title="兑换码" leftIcon="tea" bordered="{{ false }}"> </t-cell>
+    </t-cell-group>
+  </view>
+  <view class="rx-code">{{ rxCode }}</view>
+</view>
+
+<!-- 复制按钮 -->
+<t-fab
+  wx:if="{{ copyRxCodeBtnShow }}"
+  icon="file-copy"
+  bind:click="copyRxCodeBtn"
+  text="复制兑换码"
+  style="bottom: 8vh"
+/>
+
+<!-- </scroll-view> -->
+
+<!-- footer -->
+<t-footer class="footer" text="{{ footerText }}"></t-footer>

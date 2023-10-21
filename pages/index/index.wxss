@@ -1,0 +1,22 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-wrapper {
+  margin-top: 1vh;
+  font-size: 36rpx;
+  font-weight: 800;
+}
+
+.rx-code {
+  font-size: 100rpx;
+  font-weight: 800;
+}
+
+/* footer */
+.footer {
+  margin-bottom: 5vh;
+}
